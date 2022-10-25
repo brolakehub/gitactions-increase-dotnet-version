@@ -1,8 +1,8 @@
 ﻿# action.yaml
 name: 'Increase DotNet Project Version Action'
 description: 'Increase version of csproj file'
-icon: arrow-down-circle
-color: green
+icon: 'arrow-down-circle'
+color: 'green'
 inputs:
   versionType:
     description: 'major | minor | patch | prepatch'
