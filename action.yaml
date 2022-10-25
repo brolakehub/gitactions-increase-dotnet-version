@@ -12,7 +12,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'ghcr.io://ghcr.io/brolakehub/gitactions-increase-dotnet-version:main'
+  image: 'Dockerfile'
   args:
     - ${{inputs.versionType}}
     - ${{inputs.projectPath}}
