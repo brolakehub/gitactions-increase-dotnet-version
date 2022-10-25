@@ -1,0 +1,17 @@
+﻿# action.yaml
+name: 'Increase DotNet Project Version Action'
+description: 'Increase version of csproj file'
+inputs:
+  versionType:
+    description: 'major | minor | patch | prepatch'
+    required: true
+    default: prepatch
+  projectPath:
+    description: "./project.csproj"
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{inputs.versionType}}
+    - ${{inputs.projectPath}}
