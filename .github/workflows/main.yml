@@ -36,7 +36,7 @@ jobs:
       - name: Build docker image
         env:
           tag: ${{ steps.meta.outputs.tags }}
-        run: docker build . --file Dockerfile --tag brolake/gitactions-increase-dotnetproject-version:$tag
+        run: docker build . --file Dockerfile --tag $tag
         
       - name: Push docker image
         run: docker push brolake/gitactions-increase-dotnetproject-version
