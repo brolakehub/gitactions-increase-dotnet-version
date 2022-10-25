@@ -23,14 +23,14 @@ jobs:
       
       - name: Log in to Docker Hub
         env:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-        run: docker login -u $username -p $password
+          USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: docker login -u $USERNAME -p $PASSWORD
       
       - name: Build docker image
         env:
-          tag: ${{ steps.meta.outputs.tags }}
-        run: docker build . --file Dockerfile --tag brolake/gitactions-increase-dotnetproject-version:$tag
+          TAG: ${{ github.ref_name }}
+        run: docker build . --file Dockerfile --tag brolake/gitactions-increase-dotnetproject-version:$TAG
         
       - name: Push docker image
         run: docker push brolake/gitactions-increase-dotnetproject-version
