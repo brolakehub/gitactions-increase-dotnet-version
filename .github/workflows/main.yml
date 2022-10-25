@@ -27,16 +27,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
         run: docker login -u $username -p $password
       
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v4.1.1
-        with:
-          images: brolake/gitactions-increase-dotnetproject-version
-      
       - name: Build docker image
         env:
           tag: ${{ steps.meta.outputs.tags }}
-        run: docker build . --file Dockerfile --tag $tag
+        run: docker build . --file Dockerfile --tag brolake/gitactions-increase-dotnetproject-version:$tag
         
       - name: Push docker image
         run: docker push brolake/gitactions-increase-dotnetproject-version
