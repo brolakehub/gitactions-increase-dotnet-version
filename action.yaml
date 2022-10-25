@@ -1,7 +1,7 @@
 name: 'Increase DotNet Project Version Action'
 description: 'Increase version of csproj file'
-Icon: 'arrow-down-circle'
-Color: 'green'
+icon: arrow-down-circle
+color: green
 inputs:
   versionType:
     description: 'major | minor | patch | prepatch'
