@@ -17,4 +17,4 @@ RUN dotnet publish "IncreaseDotNetProjectVersion.csproj" -c Release -o /app/publ
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "./IncreaseDotNetProjectVersion.dll"]
+ENTRYPOINT ["dotnet", "/app/IncreaseDotNetProjectVersion.dll"]
