@@ -12,7 +12,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://brolake/gitactions-increase-dotnetproject-version:v1'
+  image: 'docker://brolake/gitactions-increase-dotnetproject-version:v1.0.0'
   args:
     - ${{inputs.versionType}}
     - ${{inputs.projectPath}}
