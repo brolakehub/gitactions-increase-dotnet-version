@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IncreaseDotNetProjectVersion": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
